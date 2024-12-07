@@ -1,0 +1,11 @@
+SET search_path TO wolfcrm;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users (name, email, password)
+VALUES ('John Doe', 'john@example.com', '"$2a$10$YSX.NkKXQO1EljY3GyOy9eLYT/ZP9epR0gnqRdEAYanvYR.ijFoGO"'); -- password: '123456'
